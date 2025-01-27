@@ -1,0 +1,211 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3s4axwvvuo03"]
+
+[ext_resource type="Script" path="res://Weather_page/weather_view.gd" id="1_1egkr"]
+
+[node name="Weather_view" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1egkr")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.144063, 0.144063, 0.144063, 1)
+
+[node name="Top" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 648.0
+offset_bottom = 919.0
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="Title" type="VBoxContainer" parent="Top"]
+layout_mode = 2
+
+[node name="Lname" type="Label" parent="Top/Title"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(648, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Location_name
+"
+autowrap_mode = 3
+
+[node name="Lid" type="Label" parent="Top/Title"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Location_id"
+
+[node name="Today_panel" type="PanelContainer" parent="Top"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="bg" type="ColorRect" parent="Top/Today_panel"]
+layout_mode = 2
+color = Color(0.118258, 0.225166, 0.298078, 1)
+
+[node name="Today" type="VBoxContainer" parent="Top/Today_panel"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Top/Today_panel/Today"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Today Forecast"
+horizontal_alignment = 1
+
+[node name="Lane1" type="HBoxContainer" parent="Top/Today_panel/Today"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Morning" type="Label" parent="Top/Today_panel/Today/Lane1"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Morning:"
+
+[node name="status_m" type="Label" parent="Top/Today_panel/Today/Lane1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Morning Forcast:"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Lane2" type="HBoxContainer" parent="Top/Today_panel/Today"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Afternoon" type="Label" parent="Top/Today_panel/Today/Lane2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Afternoon:"
+
+[node name="status_a" type="Label" parent="Top/Today_panel/Today/Lane2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Afternoon Forcast:"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Lane3" type="HBoxContainer" parent="Top/Today_panel/Today"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Night" type="Label" parent="Top/Today_panel/Today/Lane3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Night:"
+
+[node name="status_n" type="Label" parent="Top/Today_panel/Today/Lane3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Night Forcast:"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Lane4" type="HBoxContainer" parent="Top/Today_panel/Today"]
+layout_mode = 2
+
+[node name="Temperature" type="Label" parent="Top/Today_panel/Today/Lane4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 35
+text = "Temperature"
+horizontal_alignment = 1
+
+[node name="7days" type="PanelContainer" parent="Top"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="Top/7days"]
+layout_mode = 2
+mouse_filter = 1
+color = Color(0.283053, 0.0616451, 0.157528, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Top/7days"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Top/7days/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Forecast for next 6 days"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Top/7days/VBoxContainer"]
+custom_minimum_size = Vector2(0, 550)
+layout_mode = 2
+
+[node name="Days" type="VBoxContainer" parent="Top/7days/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Day1" type="Label" parent="Top/7days/VBoxContainer/ScrollContainer/Days"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(628, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 3
+
+[node name="Day2" type="Label" parent="Top/7days/VBoxContainer/ScrollContainer/Days"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(628, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 3
+
+[node name="Day3" type="Label" parent="Top/7days/VBoxContainer/ScrollContainer/Days"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(628, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 3
+
+[node name="Day4" type="Label" parent="Top/7days/VBoxContainer/ScrollContainer/Days"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(628, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 3
+
+[node name="Day5" type="Label" parent="Top/7days/VBoxContainer/ScrollContainer/Days"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(628, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 3
+
+[node name="Day6" type="Label" parent="Top/7days/VBoxContainer/ScrollContainer/Days"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(628, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 3
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+timeout = 20.0
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

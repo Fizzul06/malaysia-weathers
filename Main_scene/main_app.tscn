@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3vifr0a76glh"]
+
+[ext_resource type="PackedScene" uid="uid://d4e1qmsp00np1" path="res://Search_Page/search.tscn" id="1_a1eib"]
+[ext_resource type="Script" path="res://Main_scene/main_app.gd" id="1_fdtqv"]
+[ext_resource type="PackedScene" uid="uid://b3s4axwvvuo03" path="res://Weather_page/weather_view.tscn" id="3_s26cn"]
+[ext_resource type="PackedScene" uid="uid://c2gjisp2dqubs" path="res://Spinning_Idicator/loading_indicator.tscn" id="4_r1tqc"]
+
+[node name="Main_app" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fdtqv")
+
+[node name="Search" parent="." instance=ExtResource("1_a1eib")]
+layout_mode = 1
+
+[node name="Weather_view" parent="." instance=ExtResource("3_s26cn")]
+visible = false
+layout_mode = 1
+
+[node name="Loading_indicator" parent="." instance=ExtResource("4_r1tqc")]
+layout_mode = 1
+
+[connection signal="Finished_load" from="Weather_view" to="." method="_on_weather_view_finished_load"]
