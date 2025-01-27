@@ -72,7 +72,7 @@ func show_forecast():
 	var counts = 5
 	for item in days:
 		if weather[counts] != null:
-			item.text = "%s \nSummary: %s \nPada %s " % [weather[counts].date, weather[counts].summary_forecast, weather[counts].summary_when]
+			item.text = "%s \nSummary: %s \nWaktu: %s " % [weather[counts].date, weather[counts].summary_forecast, weather[counts].summary_when]
 		else:
-			item.text = "None"
+			item.text = "No Data"
 		counts -= 1
