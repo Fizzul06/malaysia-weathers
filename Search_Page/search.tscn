@@ -96,6 +96,7 @@ text = "Current date"
 
 [connection signal="text_changed" from="UInput" to="." method="_on_text_edit_text_changed"]
 [connection signal="text_set" from="UInput" to="." method="_on_u_input_text_set"]
+[connection signal="text_changed" from="UlineInput" to="." method="_on_uline_input_text_changed"]
 [connection signal="text_submitted" from="UlineInput" to="." method="_on_line_edit_text_submitted"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Search" to="." method="_on_search_pressed"]

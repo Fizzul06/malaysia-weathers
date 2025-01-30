@@ -7,6 +7,7 @@ var api_base_url = "https://api.data.gov.my/weather/forecast"
 var key
 var quered_key
 var listed = []
+var search_reset = false
 
 func _ready():
 	$Date.text = "Current Date: %s, %s" %[Global.Date, Global.get_weekday()]
@@ -70,6 +71,8 @@ func parse_weather_data(weather_data):
 			print(location_id, location_name)
 			card.setNameID(location_name, location_id)
 			results.add_child(card)
+	if weather_data.is_empty() :
+		search_id()
 	pass
 
 func capitalize_each_word(text: String) -> String:
@@ -92,4 +95,25 @@ func _on_search_pressed():
 	var query_url = "%s?contains=%s@location__location_name" % [api_base_url, key]
 	httpreq.request(query_url)
 	print(query_url)
+	pass # Replace with function body.
+
+func search_id():
+	if !search_reset:
+		httpreq.cancel_request()
+		var query_url = "%s?contains=%s@location__location_id" % [api_base_url, key]
+		httpreq.request(query_url)
+		search_reset = true
+	else:
+		print("no location ID and Name found.")
+
+
+func _on_uline_input_text_changed(new_text):
+	search_reset = false
+	if new_text == "":
+		httpreq.cancel_request()
+		key = capitalize_each_word(uline_input.text)
+		clear()
+		var query_url = "%s?contains=%s@location__location_name" % [api_base_url, key]
+		httpreq.request(query_url)
+		print(query_url)
 	pass # Replace with function body.
