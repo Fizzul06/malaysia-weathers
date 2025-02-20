@@ -1,7 +1,6 @@
 extends Control
 ##TODO REDO ALL THIS, INSTEAD OF REQUEST, JUST STORE IT AND SEARCH THROUGH AN ARRAY
 @onready var httpreq = $HTTPRequest
-@onready var u_input = $UInput
 
 var api_base_url = "https://api.data.gov.my/weather/forecast"
 var key
@@ -15,15 +14,15 @@ func _ready():
 	httpreq.request(query_url)
 	print(query_url)
 
-func _on_text_edit_text_changed():
-	httpreq.cancel_request()
-	if key != capitalize_each_word(u_input.text):
-		clear()
-		key = capitalize_each_word(u_input.text)
-		var query_url = "%s?contains=%s@location__location_name" % [api_base_url, key]
-		httpreq.request(query_url)
-		print(query_url)
-	pass # Replace with function body.
+#func _on_text_edit_text_changed():
+	#httpreq.cancel_request()
+	#if key != capitalize_each_word(u_input.text):
+		#clear()
+		#key = capitalize_each_word(u_input.text)
+		#var query_url = "%s?contains=%s@location__location_name" % [api_base_url, key]
+		#httpreq.request(query_url)
+		#print(query_url)
+	#pass # Replace with function body.
 
 @onready var uline_input = $UlineInput
 func _on_line_edit_text_submitted(new_text):
@@ -83,9 +82,6 @@ func capitalize_each_word(text: String) -> String:
 	return " ".join(words)
 
 
-func _on_u_input_text_set():
-	print("huh")
-	pass # Replace with function body.
 
 
 func _on_search_pressed():
