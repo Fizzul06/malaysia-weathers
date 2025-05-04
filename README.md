@@ -4,4 +4,4 @@ Malaysia Weather
 
 A Weather Application for android I made using godot and data.gov.my weather API 
 
-The APK file is available to download at [Release page]((https://github.com/Fizzul06/malaysia-weathers/releases)).
+The APK file is available to download at [Release Page](https://github.com/Fizzul06/malaysia-weathers/releases).
